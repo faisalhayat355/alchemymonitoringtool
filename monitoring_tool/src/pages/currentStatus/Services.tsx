@@ -237,7 +237,7 @@ const TableHeader = () => {
               <ArrowDropUpIcon/>
             </Grid>
           </Grid>
-          <Grid item xs={1.17}>
+          <Grid item xs={1}>
             <Grid container>
             <Typography variant="subtitle2" noWrap fontSize={"0.8rem"}>
              Status
@@ -246,7 +246,7 @@ const TableHeader = () => {
               <ArrowDropUpIcon/>
             </Grid>
           </Grid>
-          <Grid item xs={1.6}>
+          <Grid item xs={1.55}>
             <Grid container>
             <Typography fontSize={"0.8rem"} variant="subtitle2" noWrap >
               Last Check
@@ -264,7 +264,7 @@ const TableHeader = () => {
               <ArrowDropUpIcon/>
             </Grid>
           </Grid>
-          <Grid item xs={1.3}>
+          <Grid item xs={1.25}>
             <Grid container>
             <Typography variant="subtitle2" noWrap fontSize={"0.8rem"}>
               Attempt
@@ -294,9 +294,9 @@ const TableHeader = () => {
         <Box mt={1} >
         <Grid container>
           <Grid item xs={1.79} ml={0.1}>
-           <Grid container sx={{background:'#e7e5e4'}}>
+           <Grid container sx={{background:'#e7e5e4',height:'5.8vh'}}>
            <Grid item xs={10}>
-           <Typography fontSize={"0.7rem"}>   
+           <Typography fontSize={"0.7rem"} style={{paddingLeft:'0.2rem',paddingTop:'0.1rem'}}>   
               AIRTEL-13921609-KolkataZO
             </Typography>
            </Grid>
@@ -352,9 +352,9 @@ const TableHeader = () => {
            <Box mt={1} >
         <Grid container>
           <Grid item xs={1.79} ml={0.1}>
-           <Grid container sx={{background:'#e4e4e7'}}>
+           <Grid container sx={{background:'#e4e4e7',height:'5.8vh'}}>
            <Grid item xs={10}>
-           <Typography fontSize={"0.7rem"}>   
+           <Typography fontSize={"0.7rem"} style={{paddingLeft:'0.2rem',paddingTop:'0.1rem'}}>   
               AIRTEL-13921609-KolkataZO
             </Typography>
            </Grid>

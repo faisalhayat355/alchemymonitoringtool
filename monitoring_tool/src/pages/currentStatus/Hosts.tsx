@@ -1,12 +1,283 @@
-import React from "react";
+import React, {useState} from "react";
 import { Grid, Typography,Box,Divider,Paper } from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-
+ 
+ 
+const dataOk = [
+  {
+    id: 10021,
+    name: "Faisal",
+    email: "anna@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10022,
+    name: "Riley",
+    email: "riley@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10023,
+    name: "Nathan",
+    email: "nathan@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10024,
+    name: "Jessica",
+    email: "jessica@greatcompany.com",
+    statusp:'DOWN'
+  }
+];
+ 
+const dataCriti = [
+  {
+    id: 10021,
+    name: "Hayat",
+    email: "anna@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10022,
+    name: "Riley",
+    email: "riley@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10023,
+    name: "Nathan",
+    email: "nathan@greatcompany.com",
+    statusp:'DOWN'
+  },
+  {
+    id: 10024,
+    name: "Jessica",
+    email: "jessica@greatcompany.com",
+    statusp:'DOWN'
+  }
+];
+ 
+ 
+const data = [
+  {
+    // id: 1,
+    host: "AIRTEL-13921609-KolkataZO",
+    status: "UP",
+    lastcheck: "11-02-2023 11:57:03",
+    duration: "5d 23h 21m 51s",
+    statusinformation: "PING OK - Packet loss = 0%, RTA = 58.42 ms",
+    
+  },
+  {
+    // id: 2,
+    host: "Airtel-13789199-Kalyani",
+    status: "UP",
+    lastcheck: "11-07-2023 11:57:41",
+    duration: "12d 21h 52m 7s",
+    statusinformation: "PING OK - Packet loss = 0%, RTA = 50.48 ms"
+  },
+  {
+    // id: 3,
+    host: "Akola-BB-Synoptics",
+    status: "UP",
+    lastcheck: "11-07-2023 11:57:13",
+    duration: "2d 16h 44m 28s",
+    statusinformation: "PING OK - Packet loss = 0%, RTA = 49.69 ms"
+  },
+  {
+    // id: 4,
+    host: "Ambala-BB-Local ",
+    status: "UP",
+    lastcheck: "11-07-2023 12:00:03",
+    duration: "1d 2h 36m 36s",
+    statusinformation: "PING OK - Packet loss = 0%, RTA = 50.12 ms"
+  },
+  
+];
+ 
+const dataCritical = [
+  {
+    // id: 1,
+    hostc: "Agra-BB-Synoptics",
+    statusc: "DOWN",
+    lastcheckc: "11-02-2023 12:26:41",
+    durationc: "389d 8h 12m 33s",
+    statusinformationc: "(Host check timed out after 30.01 seconds)"
+  },
+  {
+    // id: 2,
+    hostc: "Amritsar-BB-Synoptics ",
+    statusc: "DOWN",
+    lastcheckc: "11-07-2023 11:58:25",
+    durationc: "  441d 22h 34m 27s",
+    statusinformationc: "(Host check timed out after 30.01 seconds) "
+  },
+  {
+    // id: 3,
+    hostc: "Gwalior-BB-Synoptics",
+    statusc: "DOWN",
+    lastcheckc: " 11-07-2023 12:00:00",
+    durationc: "456d 0h 55m 24s",
+    statusinformationc: "(Host check timed out after 30.01 seconds)"
+  },
+  {
+    // id: 4,
+    hostc: "Himmatnagar-BB-Synoptics ",
+    statusc: "DOWN",
+    lastcheckc: "11-07-2023 12:00:07",
+    durationc: "67d 18h 32m 18s",
+    statusinformationc: "(Host check timed out after 30.01 seconds)"
+  },
+];
+// const hostData = data.concat(dataCritical);
+const combinedArray = [...data, ...dataCritical];
+ 
 const Hosts = () => {
+//   const dataOk =[
+//     {
+//       id: 1,
+//       host:'AIRTEL-13921609-KolkataZO',
+//       status:'UP',
+//       lastcheck:'11-02-2023 11:57:03',
+//       duration:'5d 23h 21m 51s',
+//       statusinformation:'PING OK - Packet loss = 0%, RTA = 58.42 ms'
+//     }
+// ];
+ 
+// const dataCritical =[
+//   {
+//     id: 1,
+//     host:'Agra-BB-Synoptics',
+//     status:'DOWN',
+//     lastcheck:'11-02-2023 12:26:41',
+//     duration:'389d 8h 12m 33s',
+//     statusinformation:'(Host check timed out after 30.01 seconds)'
+//   }
+// ];
+ 
+// let obj = dataOk.map((e, i) => Object.assign({}, e, dataCritical[i]));
+ 
+// console.log("objobjobj",obj);
+ 
+// const people = [
+//   {
+//     id: 1,
+//     host: "AIRTEL-13921609-KolkataZO",
+//     status: "UP",
+//     lastcheck:'11-02-2023 11:57:03',
+//     duration:'5d 23h 21m 51s',
+//     statusinformation:'PING OK - Packet loss = 0%, RTA = 58.42 ms'
+//   },
+//   {
+//     id: 2,
+//     host: "Airtel-13789199-Kalyani",
+//     status: "UP",
+//     lastcheck:'11-07-2023 10:57:41',
+//     duration:'12d 20h 50m 19s',
+//     statusinformation:'PING OK - Packet loss = 0%, RTA = 50.71 ms'
+//   },
+//   {
+//     id: 3,
+//     host: "Bhilai-BB-Alliant",
+//     status: "UP",
+//     lastcheck:'  11-07-2023 10:57:14',
+//     duration:'2d 15h 42m 37s',
+//     statusinformation:'PING OK - Packet loss = 0%, RTA = 40.24 ms'
+//   },
+ 
+//   {
+//     id: 4,
+//     host: "Bhilwara-BB-Synoptics",
+//     status: "UP",
+//     lastcheck:'  11-07-2023 10:58:09',
+//     duration:'0d 2h 4m 8s',
+//     statusinformation:'PING OK - Packet loss = 20%, RTA = 62.59 ms '
+//   },
+ 
+// ];
+ 
+// const jobs = [
+//   {
+//     id: 1,
+//     host: "Amritsar-BB-Synoptics",
+//     status: "DOWN",
+//     lastcheck:'11-07-2023 10:58:25',
+//     duration:'441d 21h 32m 42s',
+//     statusinformation:'(Host check timed out after 30.01 seconds)'
+//   },
+//   {
+//     id: 2,
+//     host: "Anand-BB-Synoptics",
+//     status: "DOWN",
+//     lastcheck:'11-07-2023 10:59:47',
+//     duration:' 23d 10h 58m 8s',
+//     statusinformation:'(Host check timed out after 30.01 seconds) '
+//   },
+//   {
+//     id: 3,
+//     host: "Anna Nagar-BB-Synoptics",
+//     status: "DOWN",
+//     lastcheck:'11-07-2023 10:59:49',
+//     duration:'474d 18h 16m 3s',
+//     statusinformation:'(Host check timed out after 30.01 seconds) '
+//   },
+ 
+//   {
+//     id: 4,
+//     host: "Calicut-BB-Synoptics",
+//     status: "DOWN",
+//     lastcheck:'11-07-2023 16:32:23',
+//     duration:'268d 20h 12m 20s',
+//     statusinformation:'  (Host check timed out after 30.00 seconds)  '
+//   },
+// ];
+ 
+// let obj = people.map((e, i) => Object.assign({}, e, jobs[i]));
+ 
+// const [data,setData]=useState([dataOk])
+// const [dataCritical,setDataCritical]=useState([dataCriti])
+ 
+// const children = data.concat(dataCritical);
+ 
+ 
+// const [item,setItem]=useState([children])
+ 
+// console.log("Itemmmmm",item);
+ 
+// var finalArray = children.map(function (obj) {
+//   return obj.name;
+// });
+ 
+// console.log("children",children);
+ 
+ 
+// const jobs = [
+//   {
+//     id: 10021,
+//     title: "Engineer",
+//     status:'UP'
+//   },
+//   {
+//     id: 10022,
+//     title: "Quality Assurance",
+//     status:'UP'
+//   },
+//   {
+//     id: 10023,
+//     title: "Product Owner",
+//     status:'UP'
+//   }
+// ];
+ 
+// let obj = people.map((e, i) => Object.assign({}, e, jobs[i]));
+ 
+ 
+// console.log("datttttaaaaa",data);
+ 
   const time = new Date().toLocaleTimeString();
   const date = new Date();
   let day = date.getDate();
@@ -32,7 +303,7 @@ const Hosts = () => {
           <Typography fontSize={"0.6rem"} style={{cursor:'pointer',textDecoration:'underline'}}>View Host Status Detail For All Host Groups</Typography>
           <Typography fontSize={"0.6rem"} style={{cursor:'pointer',textDecoration:'underline'}}>View Status Overview For All Host Groups</Typography>
           <Typography fontSize={"0.6rem"} style={{cursor:'pointer',textDecoration:'underline'}}>View Status Grid For All Host Groups</Typography>
-         </Grid> 
+         </Grid>
       </Grid>
       <Grid item xs={3}>
       <Typography fontSize={"0.9rem"} fontWeight={"bold"} textAlign={"center"}>Host Status Totals</Typography>
@@ -135,7 +406,7 @@ const Hosts = () => {
           </div>
         </Grid>
       </Grid>
-
+ 
       <Grid mt={1}>
       <Grid container>
         <Grid item xs={4.8}>
@@ -166,52 +437,75 @@ const Hosts = () => {
     <TableHeader/>
       <Grid sx={{height:'55.5vh',overflowY:'scroll'}}>
        
-        <TableDataOk/>
+       {/* <TableDataOk combinedArray={combinedArray}/> */}
+       
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
         <TableDataCritical/>
         <TableDataCritical/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        <TableDataOk/>
-        </Grid> 
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        <TableDataCritical/>
+        </Grid>
          <Grid container>
         <Grid item xs={11.9} sx={{display:'flex',justifyContent:'flex-end'}}>
         <Pagination count={10} size="small" />
         </Grid>
       </Grid>  
+ 
+ 
+      {/* {data.map((items)=>{
+        return(
+          <>
+          {items.name}
+          </>
+        )
+      })} */}
+ 
+{/* {combinedArray.map((items:any)=>{
+  return(
+    <>
+    <div>
+    <div>{items.host}</div>
+    <div>{items.status}</div>
+    <div>{items.lastcheck}</div>
+    <div>{items.duration}</div>
+    <div>{items.statusinformation}</div>
+ 
+    </div>
+ 
+<div>
+<div>{items.hostc}</div>
+<div>{items.statusc}</div>
+<div>{items.lastcheckc}</div>
+<div>{items.durationc}</div>
+<div>{items.statusinformationc}</div>
+ 
+</div>
+</>
+  )
+})} */}
+     
      </Box>
     </div>
   )
 }
-
+ 
 const TableHeader = () => {
   return(
   <>
@@ -228,7 +522,7 @@ const TableHeader = () => {
           </Grid>
           <Grid item xs={1.17}>
             <Grid container>
-
+ 
             <Typography variant="subtitle2" noWrap fontSize={"0.8rem"}>
              Status
             </Typography>
@@ -268,63 +562,72 @@ const TableHeader = () => {
   </>
   )
   }
-
-  const TableDataOk = () => {
-      return(
-      <>
-       <Box mt={0.3}> 
-            <Grid container>
-              <Grid item xs={3.1} sx={{background:'#bee8ba'}}>
-               <Grid container sx={{display:'flex',alignItems:'center',}}>
-                <Grid item xs={9}>
-                <Typography fontSize={"0.7rem"} ml={'1rem'}>
-                AIRTEL-13921609-KolkataZO 
-                </Typography>
-                </Grid>
-                <Grid item xs={3} mt={0.2}>
-                  <AutoGraphIcon style={{fontSize:'1rem'}}/>
-                  <SearchIcon style={{fontSize:'1rem',marginLeft:'0.8rem'}}/>
-                </Grid>
-               </Grid>
-              </Grid>
-              <Grid item xs={1.14} sx={{background:'#bee8ba',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
-                <Typography noWrap fontSize={"0.7rem"} ml={"0.2rem"}>
-                UP
-                </Typography>
-              </Grid>
-              <Grid item xs={1.99} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
-                <Typography fontSize={"0.7rem"}  noWrap display={"flex"} justifyContent={"space-around"}>
-                11-02-2023 11:57:03
-                </Typography>
-              </Grid>
-              <Grid item xs={1.6} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
-                <Typography display={"flex"} justifyContent={"space-around"} fontSize={"0.7rem"}>
-                5d 23h 21m 51s
-                </Typography>
-              </Grid>
-              <Grid item xs={4} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
-              <Typography fontSize={"0.7rem"}>
-              PING OK - Packet loss = 0%, RTA = 58.42 ms 
-                </Typography>  
-              </Grid>
-
-            </Grid>
-          
-        </Box>
-      </>
-      )
-      }
-
+ 
+  // const TableDataOk = ({combinedArray}:any) => {
+  //     return(
+  //     <>
+     
+  //     {combinedArray.map((items:any)=>{
+  //         return(
+  //      <Box mt={0.3}>
+ 
+  //           <Grid container>
+  //             <Grid item xs={3.1} sx={{background:'#bee8ba'}}>
+  //              <Grid container sx={{display:'flex',alignItems:'center',}}>
+  //               <Grid item xs={9}>
+  //               <Typography fontSize={"0.7rem"} ml={'1rem'}>
+  //               {items.host} 
+  //               </Typography>
+  //               </Grid>
+  //               <Grid item xs={3} mt={0.2}>
+  //                 <AutoGraphIcon style={{fontSize:'1rem'}}/>
+  //                 <SearchIcon style={{fontSize:'1rem',marginLeft:'0.8rem'}}/>
+  //               </Grid>
+  //              </Grid>
+  //             </Grid>
+  //             <Grid item xs={1.14} sx={{background:'#bee8ba',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
+  //               <Typography noWrap fontSize={"0.7rem"} ml={"0.2rem"}>
+  //               {items.status}
+  //               </Typography>
+  //             </Grid>
+  //             <Grid item xs={1.99} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
+  //               <Typography fontSize={"0.7rem"}  noWrap display={"flex"} justifyContent={"space-around"}>
+  //               {items.lastcheck}
+  //               </Typography>
+  //             </Grid>
+  //             <Grid item xs={1.6} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
+  //               <Typography display={"flex"} justifyContent={"space-around"} fontSize={"0.7rem"}>
+  //               {items.duration}
+  //               </Typography>
+  //             </Grid>
+  //             <Grid item xs={4} sx={{background:'#e5e5e5',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
+  //             <Typography fontSize={"0.7rem"}>
+  //             {items.statusinformation}
+  //               </Typography>  
+  //             </Grid>
+ 
+  //           </Grid>
+       
+ 
+           
+         
+  //       </Box>
+  //       )
+  //     })}
+  //     </>
+  //     )
+  //     }
+ 
   const TableDataCritical = () => {
           return(
           <>
-           <Box mt={0.3}> 
+           <Box mt={0.3}>
             <Grid container>
               <Grid item xs={3.1} sx={{background:'#fee2e2'}}>
                <Grid container sx={{display:'flex',alignItems:'center',}}>
                 <Grid item xs={9}>
                 <Typography fontSize={"0.7rem"} ml={'1rem'}>
-                Agra-BB-Synoptics 
+                Agra-BB-Synoptics
                 </Typography>
                 </Grid>
                 <Grid item xs={3} mt={0.2}>
@@ -350,15 +653,16 @@ const TableHeader = () => {
               </Grid>
               <Grid item xs={4} sx={{background:'#fee2e2',marginLeft:'0.1rem',alignItems:'center',display:'flex'}}>
               <Typography fontSize={"0.7rem"}>
-              (Host check timed out after 30.01 seconds) 
+              (Host check timed out after 30.01 seconds)
                 </Typography>  
               </Grid>
-
+ 
             </Grid>
-          
+         
         </Box>
           </>
           )
       }
-
+ 
 export default Hosts
+ 
