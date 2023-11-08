@@ -95,7 +95,8 @@ let currentDate = `${day}-${month}-${year}`;
               </Grid>
 
               <Grid mt={6}>
-                <Button variant="contained" size="small" style={{height:'1.4rem',textTransform:'capitalize'}}>Update</Button>
+                <button>Update</button>
+                {/* <Button variant="contained" size="small" style={{height:'1.4rem',textTransform:'capitalize'}}>Update</Button> */}
               </Grid>
             
               </Grid>
