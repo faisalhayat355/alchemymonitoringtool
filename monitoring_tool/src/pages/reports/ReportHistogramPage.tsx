@@ -62,7 +62,7 @@ const ReportHistogramPage = () => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <Box sx={{width:'100vh', paddingTop:"1rem",paddingBottom:'0.5rem'}}>
+        <Box sx={{width:'93vh', paddingTop:"1rem",paddingBottom:'0.5rem'}}>
         <Grid container>
       <Grid item xs={6}>
         <Typography ml={2}>Nagios Histogram</Typography>
