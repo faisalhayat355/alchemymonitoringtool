@@ -3,10 +3,11 @@ import Modal from '@mui/material/Modal';
 
 const style = {
     position: 'absolute' as 'absolute',
-    top: '51%',
-    left: '60%',
+    top: '50%',
+    left: '59.5%',
+    height:'100vh',
     transform: 'translate(-50%, -50%)',
-    width: 1033,
+    width: 1115,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
