@@ -1,10 +1,8 @@
-import React from 'react'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Box, Card, Divider, Grid, Typography } from "@mui/material";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CloseIcon from '@mui/icons-material/Close';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { Box, Divider, Grid, Typography } from "@mui/material";
 
 const SystemSchedulingQueuePage = () => {
   const time = new Date().toLocaleTimeString();
