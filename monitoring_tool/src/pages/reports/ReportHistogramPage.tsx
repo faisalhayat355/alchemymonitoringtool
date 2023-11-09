@@ -65,7 +65,7 @@ const ReportHistogramPage = () => {
         <Box sx={{width:'93vh', paddingTop:"1rem",paddingBottom:'0.5rem'}}>
         <Grid container>
       <Grid item xs={6}>
-        <Typography ml={2}>Nagios Histogram</Typography>
+        <Typography ml={2}>Alchemy Histogram</Typography>
        </Grid>
        <Grid item xs={5.7} sx={{display:'flex', justifyContent:'flex-end'}}>
         <CloseIcon onClick={handleClose} sx={{cursor:'pointer'}}/>

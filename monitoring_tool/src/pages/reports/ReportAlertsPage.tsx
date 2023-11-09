@@ -40,7 +40,7 @@ const ReportAlertsPage = () => {
           <Typography fontSize={'0.7rem'} color={"black"} ml={2.2}>Wed Nov 8 00:00:00 IST 2023</Typography>
           <Typography fontSize={'0.7rem'} color={"black"} ml={11}>to</Typography>
           <Typography fontSize={'0.7rem'} color={"black"} ml={9.5}>Present...</Typography>
-          <Typography fontSize={'0.7rem'} color={"black"} mt={2}>File: /usr/local/nagios/var/nagios.log</Typography>
+          <Typography fontSize={'0.7rem'} color={"black"} mt={2}>File: /usr/local/alchemy/var/alchemy.log</Typography>
         </Grid>
         </Grid>
       </Grid>

@@ -41,10 +41,6 @@ const Sidebar = ({token,setToken}:any) => {
       </List>
    <Grid container>
     <Grid item xs={12} pl={3} pr={3} mt={15}>
-      {/* <Typography fontSize={"0.9rem"} textAlign={"center"}>
-      Extra Tools "<span>{">"}</span> MRTG stats "<span>{">"}</span> Nagios Graph
-      </Typography> */}
-
       {token ? <Logout setToken={setToken} /> : ""}
     </Grid>
    </Grid>

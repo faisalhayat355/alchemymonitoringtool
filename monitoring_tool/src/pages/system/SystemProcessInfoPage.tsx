@@ -19,7 +19,7 @@ const SystemProcessInfoPage = () => {
       <Box>
        <Grid container>
         <Grid item xs={3.5}>
-          <Typography fontSize={"0.9rem"} fontWeight={"bold"}>Nagios Process Information</Typography>
+          <Typography fontSize={"0.9rem"} fontWeight={"bold"}>Alchemy Process Information</Typography>
           <Typography fontSize={"0.6rem"}>
             Last Updated: {currentDate} {time}
           </Typography>
@@ -163,14 +163,14 @@ const SystemProcessInfoPage = () => {
             <Grid item xs={12} sx={{display:'flex',alignItems:'center'}}>
                 <ArrowDropDownIcon/>
                 <Link href="#" underline="hover">
-                <Typography fontSize={"0.8rem"}>Shutdown the Nagios process</Typography>
+                <Typography fontSize={"0.8rem"}>Shutdown the Alchemy process</Typography>
                 </Link>
             </Grid>
 
             <Grid item xs={12} sx={{display:'flex',alignItems:'center'}}>
                 <SwapVertIcon style={{fontSize:'1.2rem',marginLeft:'0.2rem'}}/>
                 <Link href="#" underline="hover">
-                <Typography fontSize={"0.8rem"} ml={0.3}>Restart the Nagios process</Typography>
+                <Typography fontSize={"0.8rem"} ml={0.3}>Restart the Alchemy process</Typography>
                 </Link>
             </Grid>
 

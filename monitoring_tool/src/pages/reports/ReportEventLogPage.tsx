@@ -39,7 +39,7 @@ const ReportEventLogPage = () => {
          <Typography fontSize={'0.7rem'} color={"black"} ml={2.2}>Wed Nov 8 00:00:00 IST 2023</Typography>
          <Typography fontSize={'0.7rem'} color={"black"} ml={11}>to</Typography>
          <Typography fontSize={'0.7rem'} color={"black"} ml={9.5}>Present...</Typography>
-         <Typography fontSize={'0.7rem'} color={"black"} mt={2}>File: /usr/local/nagios/var/nagios.log</Typography>
+         <Typography fontSize={'0.7rem'} color={"black"} mt={2}>File: /usr/local/alchemy/var/alchemy.log</Typography>
        </Grid>
        </Grid>
      </Grid>
@@ -179,7 +179,7 @@ const Body3=()=>{
             <RssFeedIcon style={{fontSize:'0.9rem',transform:'rotate(269deg)',paddingTop:'-0.8rem',border:'0.5px solid black',background:'#d2d3d4 '}}/>
       </Grid>
       <Grid item xs={11.7}>
-        <Typography fontSize={'0.7rem'}>[11-08-2023 17:21:53] SERVICE NOTIFICATION: nagiosadmin;Airtel-13836082-Sagar;MPLS-BW;CRITICAL;notify-service-by-email;CRITICAL: Interface index not detected ERROR</Typography>
+        <Typography fontSize={'0.7rem'}>[11-08-2023 17:21:53] SERVICE NOTIFICATION: alchemyadmin;Airtel-13836082-Sagar;MPLS-BW;CRITICAL;notify-service-by-email;CRITICAL: Interface index not detected ERROR</Typography>
       </Grid>
     </Grid>
     </>
