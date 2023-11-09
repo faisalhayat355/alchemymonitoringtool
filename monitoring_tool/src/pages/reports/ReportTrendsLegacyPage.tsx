@@ -1,8 +1,5 @@
-import React, {useState} from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Divider from '@mui/material/Divider';
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+import { useState } from "react";
 import ReportsLegacyPopup from "./reportlegacypop-up/step1";
 
 

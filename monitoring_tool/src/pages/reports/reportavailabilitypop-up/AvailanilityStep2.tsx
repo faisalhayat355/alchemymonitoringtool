@@ -1,15 +1,10 @@
-import React from 'react'
-import Button from '@mui/material/Button';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Box, Grid, IconButton, Typography } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-import { Typography,Box,Grid,IconButton } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import CreateReportPage from './CreateReportPage';
+import React from 'react';
+import CreateReportAvailabilityPage from './CreateReportAvailabilityPage';
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -21,7 +16,7 @@ const Transition = React.forwardRef(function Transition(
   });
   
 
-const ReportsLegacyStep2Popup = ({handleCloseStep2,modalStep2}:any) => {
+const ReportsAvailibilityStep2Popup = ({handleCloseStep2,modalStep2}:any) => {
 
   const [report, setReport] = React.useState(false);
 
@@ -243,17 +238,17 @@ const ReportsLegacyStep2Popup = ({handleCloseStep2,modalStep2}:any) => {
                     </Box>
                     <Grid container sx={{display:'flex',justifyContent:'flex-end'}} mt={2}>
                         <Grid item xs={6.8}>
-                            <button onClick={handleClickOpenReport}>Create Report</button>
+                            <button onClick={handleClickOpenReport}>Create Availability Report</button>
                         </Grid>
                     </Grid>
                     </div>
                 </Dialog>
             </Grid>
         </Grid>
-        <CreateReportPage report={report} handleCloseReport={handleCloseReport}/>
+        <CreateReportAvailabilityPage report={report} handleCloseReport={handleCloseReport}/>
      </Box>
     </div>
   )
 }
 
-export default ReportsLegacyStep2Popup
+export default ReportsAvailibilityStep2Popup

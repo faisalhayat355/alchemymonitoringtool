@@ -1,67 +1,10 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Box, Divider, Grid, IconButton, Link, Typography } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import { Box, Grid, Typography,Link,IconButton } from "@mui/material";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Divider from '@mui/material/Divider';
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import { Chart } from "react-google-charts";
-
-
-export const data = [
-    [
-      { type: "number", label: "x" },
-      { type: "number", label: "values" },
-      { id: "i0", type: "number", role: "interval" },
-      { id: "i1", type: "number", role: "interval" },
-      { id: "i2", type: "number", role: "interval" },
-      { id: "i2", type: "number", role: "interval" },
-      { id: "i2", type: "number", role: "interval" },
-      { id: "i2", type: "number", role: "interval" },
-    ],
-    [1, 100, 90, 110, 85, 96, 104, 120],
-    [2, 120, 95, 130, 90, 113, 124, 140],
-    [3, 130, 105, 140, 100, 117, 133, 139],
-    [4, 90, 85, 95, 85, 88, 92, 95],
-    [5, 70, 74, 63, 67, 69, 70, 72],
-    [6, 30, 39, 22, 21, 28, 34, 40],
-    [7, 80, 77, 83, 70, 77, 85, 90],
-    [8, 100, 90, 110, 85, 95, 102, 110],
-  ];
-  
-  export const options = {
-    curveType: "function",
-    intervals: { color: "series-color" },
-    interval: {
-      i0: {
-        color: "#4374E0",
-        style: "bars",
-        barWidth: 0,
-        lineWidth: 4,
-        pointSize: 10,
-        fillOpacity: 1,
-      },
-      i1: {
-        color: "#E49307",
-        style: "bars",
-        barWidth: 0,
-        lineWidth: 4,
-        pointSize: 10,
-        fillOpacity: 1,
-      },
-      i2: { style: "area", curveType: "function", fillOpacity: 0.3 },
-    },
-    legend: "none",
-  };
-  
-
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -69,10 +12,10 @@ const Transition = React.forwardRef(function Transition(
   },
   ref: React.Ref<unknown>
 ) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const CreateReportPage = ({report,handleCloseReport}:any) => {
+const CreateReportAvailabilityPage = ({report,handleCloseReport}:any) => {
     const time = new Date().toLocaleTimeString();
     const date = new Date();
     let day = date.getDate();
@@ -209,10 +152,7 @@ const CreateReportPage = ({report,handleCloseReport}:any) => {
     <Box>
     <Grid container>
         <Grid item xs={12}>
-            <Typography fontSize={'0.7rem'} textAlign={'center'}>State History For Host 'TATA-091PATN723013251880-Patna'</Typography>
-        </Grid>
-        <Grid item xs={12}>
-            <Typography fontSize={'0.7rem'} textAlign={'center'}>Thu Nov 2 15:03:40 2023 to Thu Nov 2 15:03:40 2023</Typography>
+            <Typography fontSize={'1rem'} fontWeight={"bold"} textAlign={'center'}>Hostgroup 'Broadband' Host State Breakdowns:</Typography>
         </Grid>
     </Grid>
     </Box>
@@ -223,12 +163,84 @@ const CreateReportPage = ({report,handleCloseReport}:any) => {
             <Grid item xs={0.6}>
             </Grid>
             <Grid item xs={9}>
-            <Chart chartType="LineChart" width="100%" height="330px"data={data} options={options}/>
+              <Header/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
             </Grid>
             <Grid item xs={1}>   
             </Grid>
         </Grid>
     </Box>
+
+
+    <Box mt={2}>
+    <Grid container>
+        <Grid item xs={12}>
+            <Typography fontSize={'1rem'} fontWeight={"bold"} textAlign={'center'}>Hostgroup 'Fortigate' Host State Breakdowns:</Typography>
+        </Grid>
+    </Grid>
+    </Box>
+    <Box>
+        <Grid container>
+            <Grid item xs={1}></Grid>
+            <Grid item xs={0.3}>
+            </Grid>
+            <Grid item xs={9.7}>
+              <Header/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+            </Grid>
+        </Grid>
+    </Box>
+
+
+    <Box mt={2}>
+    <Grid container>
+        <Grid item xs={12}>
+            <Typography fontSize={'1rem'} fontWeight={"bold"} textAlign={'center'}>Hostgroup 'linux-servers' Host State Breakdowns:</Typography>
+        </Grid>
+    </Grid>
+    </Box>
+    <Box>
+        <Grid container>
+         
+            <Grid item xs={2}>
+            </Grid>
+            <Grid item xs={8}>
+              <Header/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+              <BodyData/>
+            </Grid>
+        </Grid>
+    </Box>
+
 
       </Box>
      </Grid>
@@ -237,4 +249,61 @@ const CreateReportPage = ({report,handleCloseReport}:any) => {
   )
 }
 
-export default CreateReportPage
+const Header=()=>{
+  return(
+    <>
+    <Box>
+    <Grid container>
+      <Grid item xs={2.5}>
+        <Typography fontSize={"0.8rem"} fontWeight={"bold"}>Host</Typography>
+        <Divider style={{width:'99%'}}/>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.8rem"} fontWeight={"bold"}>% Time Up</Typography>
+      <Divider style={{width:'99%'}}/>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.8rem"} fontWeight={"bold"}>% Time Down</Typography>
+      <Divider style={{width:'99%'}}/>
+      </Grid>
+      <Grid item xs={2.5}>
+      <Typography fontSize={"0.8rem"} fontWeight={"bold"}>% Time Unreachable</Typography>
+      <Divider style={{width:'98.5%'}}/>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.8rem"} fontWeight={"bold"}>% Time Undetermined</Typography>
+      <Divider style={{width:'100%'}}/>
+      </Grid>
+    </Grid>
+    </Box>
+    </>
+  )
+}
+
+const BodyData=()=>{
+  return(
+    <>
+    <Box>
+    <Grid container mt={0.5}>
+      <Grid item xs={2.5}>
+        <Typography fontSize={"0.65rem"} sx={{background:"#dbdbdb", width:'99%',paddingLeft:'0.2rem'}}>Agra-BB-Synoptics</Typography>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.65rem"} sx={{background:"#a6ffad", width:'99%',paddingLeft:'0.2rem'}}>0.000% (0.000%)</Typography>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.65rem"} sx={{background:"#ff9cee", width:'99%',paddingLeft:'0.2rem'}}>100.000% (100.000%)</Typography>
+      </Grid>
+      <Grid item xs={2.5}>
+      <Typography fontSize={"0.65rem"} sx={{background:"#ffbd96", width:'98.3%',paddingLeft:'0.2rem'}}>0.000% (0.000%)</Typography>
+      </Grid>
+      <Grid item xs={2.3}>
+      <Typography fontSize={"0.65rem"} sx={{background:"#dbdbdb", width:'100%',paddingLeft:'0.2rem'}}>	0.000%</Typography>
+      </Grid>
+    </Grid>
+    </Box>
+    </>
+  )
+}
+
+export default CreateReportAvailabilityPage

@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import React, { useState } from 'react';
-import ReportsLegacyStep2Popup from './step2';
+import ReportsAvailibilityStep2Popup from './AvailanilityStep2';
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -16,7 +16,7 @@ const Transition = React.forwardRef(function Transition(
   });
   
 
-const ReportsLegacyPopup = ({handleClose,modal}:any) => {
+const ReportsAvailibilityPopup = ({handleClose,modal}:any) => {
   const [modalStep2, setModalStep2] = useState(false);
 
   const handleClickStep2Open = () => {
@@ -53,29 +53,10 @@ const handleCloseStep2 = () => {
                     </Grid>
                     <Grid item xs={5}>
                     <select>
-                        <option>AIRTEL-13921609-KolkataZO</option>
-                        <option>Agra-BB-Synoptics</option>
-                        <option>Ahmednagar-BB-Synoptics</option>
-                        <option>Airtel-13789199-Kalyani</option>
-                        <option>Airtel-13834795-Jammu</option>
-                        <option>Airtel-13835054-Indore</option>
-                        <option>Airtel-13835057-Lucknow</option>
-                        <option>Airtel-13835058-Ahmedabad</option>
-                        <option>Airtel-13835059-Che-T.Nagar</option>
-                        <option>Airtel-13836055-Kolhapur</option>
-                        <option>Airtel-13836048-Vijayawada</option>
-                        <option>Airtel-13836082-Sagar</option>
-                        <option>Airtel-13836084-Andheri</option>
-                        <option>Airtel-13836062-Mehsana</option>
-                        <option>Airtel-13838514-Ambala</option>
-                        <option>Airtel-13838525-Bilashpur</option>
-                        <option>Airtel-13840291-Bang-Mallesware</option>
-                        <option>Airtel-13841970-Gwalior</option>
-                        <option>Airtel-13843182-Shimla</option>
-                        <option>Airtel-13848260-Borivali</option>
-                        <option>Airtel-13848262-Thane</option>
-                        <option>Airtel-13861478-Belgaum</option>
-
+                        <option>** ALL HOSTGROUPS **</option>
+                        <option>Broadband</option>
+                        <option>Fortigate</option>
+                        <option>linux-servers</option>
                     </select>
                     </Grid>
                    </Grid>
@@ -89,10 +70,10 @@ const handleCloseStep2 = () => {
                 </Dialog>
             </Grid>
         </Grid>
-        <ReportsLegacyStep2Popup handleCloseStep2={handleCloseStep2} modalStep2={modalStep2}/>
+        <ReportsAvailibilityStep2Popup handleCloseStep2={handleCloseStep2} modalStep2={modalStep2}/>
      </Box>
     </div>
   )
 }
 
-export default ReportsLegacyPopup
+export default ReportsAvailibilityPopup
