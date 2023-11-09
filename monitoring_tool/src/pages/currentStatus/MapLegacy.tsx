@@ -76,7 +76,6 @@ let currentDate = `${day}-${month}-${year}`;
               </Grid>
               </Grid>
 
-
               <Grid item xs={4} >
               <Typography fontSize={"0.7rem"}>Scaling factor:</Typography>
 
