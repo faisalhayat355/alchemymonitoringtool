@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import React from 'react';
-import CreateReportPage from './CreateReportPage';
+import CreateReportHistogramLegacyPage from './CreateReportHistogramLegacyPage';
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -15,7 +15,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
   
-const ReportsLegacyStep2Popup = ({handleCloseStep2,modalStep2}:any) => {
+const ReportsHistogramLegacyPopupStep2 = ({handleCloseStep2,modalStep2}:any) => {
 
   const [report, setReport] = React.useState(false);
 
@@ -240,10 +240,10 @@ const ReportsLegacyStep2Popup = ({handleCloseStep2,modalStep2}:any) => {
                 </Dialog>
             </Grid>
         </Grid>
-        <CreateReportPage report={report} handleCloseReport={handleCloseReport}/>
+        <CreateReportHistogramLegacyPage report={report} handleCloseReport={handleCloseReport}/>
      </Box>
     </div>
   )
 }
 
-export default ReportsLegacyStep2Popup
+export default ReportsHistogramLegacyPopupStep2
