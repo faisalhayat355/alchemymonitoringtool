@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Divider from '@mui/material/Divider';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import ReportsLegacyPopup from "./reportlegacypop-up";
+import ReportsLegacyPopup from "./reportlegacypop-up/step1";
 
 
 const ReportTrendsLegacyPage = () => {
