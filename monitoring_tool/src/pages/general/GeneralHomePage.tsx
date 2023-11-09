@@ -1,10 +1,8 @@
-import React from "react";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { Grid, Typography } from "@mui/material";
 import assets from "../../assets";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 type Props = {};
@@ -33,7 +31,7 @@ const GeneralHomePage = (props: Props) => {
         <Typography style={{fontSize:'1.2rem', fontWeight:'bold'}}>Version 4.4.5</Typography>
       </Grid>
       <Grid item xs={12} style={{justifyContent:'center',display:"flex"}}>
-        <Typography style={{fontSize:'0.85rem', }}>August 20, 2019</Typography>
+        <Typography style={{fontSize:'0.85rem', }}>October 20, 2023</Typography>
       </Grid>
       <Grid item xs={12} style={{justifyContent:'center',display:"flex"}}>
         <Typography style={{fontSize:'0.9rem', fontWeight:'500',color:'#0284c7'}}>Check for updates</Typography>
